@@ -1,0 +1,69 @@
+<template>
+  <div id="app" class="dark-mode">
+    <AppHeader :showNav="showNav" @toggle-nav="toggleMenu" />
+    <AppMain :videos="podcasts" />
+    <AppFooter />
+  </div>
+</template>
+
+<script>
+import AppHeader from "./components/AppHeader.vue";
+import AppMain from "./components/AppMain.vue";
+import AppFooter from './components/AppFooter.vue';
+
+export default {
+  name: 'App',
+  components: {
+    AppHeader,
+    AppMain,
+    AppFooter
+  },
+  data() {
+    return {
+      showNav: false,
+      podcasts: []
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.showNav = !this.showNav;
+    },
+    handleResize() {
+      if (window.innerWidth >= 769) {
+        this.showNav = true;
+      } else {
+        this.showNav = false;
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+}
+</script>
+
+<style scoped>
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  color: #eee;
+  background-color: #000000;
+  font-family: 'MedievalSharp', cursive;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+</style>
