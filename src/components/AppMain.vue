@@ -85,7 +85,7 @@ export default {
 
             this.videos = response.data.items.map(item => {
                 const title = item.snippet.title;
-                const trimmedTitle = title.replace(" | Temple Mount", "");
+                const trimmedTitle = title.replace(" | Temple Mount Podcast", "");
 
                 return {
                     id: item.id.videoId,
