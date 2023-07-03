@@ -83,12 +83,17 @@ export default {
 
             const response = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=${process.env.VUE_APP_YOUTUBE_API}&channelId=UCejEXnx1OcXmIei8OGwLSMQ&part=snippet,id&order=date&maxResults=6`);
 
-            this.videos = response.data.items.map(item => ({
-                id: item.id.videoId,
-                title: item.snippet.title,
-                description: item.snippet.description,
-                thumbnail: `https://img.youtube.com/vi/${item.id.videoId}/0.jpg`,
-            }));
+            this.videos = response.data.items.map(item => {
+                const title = item.snippet.title;
+                const trimmedTitle = title.replace(" | Temple Mount", "");
+
+                return {
+                    id: item.id.videoId,
+                    title: trimmedTitle,
+                    description: item.snippet.description,
+                    thumbnail: `https://img.youtube.com/vi/${item.id.videoId}/0.jpg`,
+                };
+            });
 
             // save the videos and current timestamp to the localStorage
             localStorage.setItem('videos', JSON.stringify({ data: this.videos, timestamp: now }));
@@ -268,7 +273,9 @@ export default {
     border: 1px solid #333;
     border-radius: 10px;
     overflow: hidden;
+    text-decoration: none;
 }
+
 
 .slide img {
     width: 100%;
@@ -297,6 +304,7 @@ export default {
     font-size: 1em;
     text-align: center;
     box-shadow: 1px rgba(0, 0, 0, 1);
+
 }
 
 
