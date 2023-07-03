@@ -278,11 +278,11 @@ export default {
 
 .slide:hover {
     transform: scale(1.05);
-    box-shadow:
+    /*  box-shadow:
         0 0 5px #000AB2,
         0 0 10px #000AB2,
         0 0 20px #000AB2,
-        0 0 40px #000AB2;
+        0 0 40px #000AB2; */
 }
 
 .video-info {
