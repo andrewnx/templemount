@@ -81,7 +81,7 @@ export default {
                 return;
             }
 
-            const response = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyBSN37VwohvzZMs8paiys_OfU7WzjtE_jY&channelId=UCejEXnx1OcXmIei8OGwLSMQ&part=snippet,id&order=date&maxResults=6`);
+            const response = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=${process.env.VUE_APP_YOUTUBE_API}&channelId=UCejEXnx1OcXmIei8OGwLSMQ&part=snippet,id&order=date&maxResults=6`);
 
             this.videos = response.data.items.map(item => ({
                 id: item.id.videoId,
