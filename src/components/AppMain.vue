@@ -1,5 +1,5 @@
 <template>
-    <MetaTags :og-image="ogImage" :twitter-image="twitterImage" />
+    <MetaTags :og-image="require('@/assets/tmlogo.png')" :twitter-image="require('@/assets/tmlogo.png')" />
     <main>
         <section class="banner">
             <a href="https://discord.gg/aygEfaxWeF">
@@ -74,8 +74,6 @@ export default {
             cacheDuration: 24 * 60 * 60,
             cacheKey: 'videosCache',
             cacheTimestampKey: 'videosCacheTimestamp',
-            opImage: process.env.VUE_APP_OG_IMAGE,
-            twitterImage: process.env.VUE_APP_TWITTER_IMAGE,
         };
     },
     async created() {
