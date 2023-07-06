@@ -64,10 +64,6 @@
 import axios from 'axios';
 import MetaTags from '@/components/MetaTags.vue';
 
-
-
-
-
 export default {
     components: {
         MetaTags,
@@ -110,7 +106,7 @@ export default {
             );
 
             this.videos = response.data.items.map((item) => ({
-                id: item.id.videoId,
+                id: item.snippet.resourceID.videoID,
                 title: item.snippet.title.replace(' | Temple Mount Podcast', ''),
                 description: item.snippet.description,
                 thumbnail: `https://img.youtube.com/vi/${item.id.videoId}/0.jpg`,
