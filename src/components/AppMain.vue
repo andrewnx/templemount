@@ -64,9 +64,27 @@
 import axios from 'axios';
 import MetaTags from '@/components/MetaTags.vue';
 
+
+
+
+
 export default {
     components: {
         MetaTags,
+    },
+    metaInfo() {
+        return {
+            meta: [
+                {
+                    property: 'og:image',
+                    content: require('@/assets/tmlogo.png'),
+                },
+                {
+                    name: 'twitter:image',
+                    content: require('@/assets/tmlogo.png'),
+                },
+            ],
+        };
     },
     data() {
         return {
