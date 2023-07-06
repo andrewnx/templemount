@@ -109,7 +109,7 @@ export default {
                 id: item.id.videoID,
                 title: item.snippet.title.replace(' | Temple Mount Podcast', ''),
                 description: item.snippet.description,
-                thumbnail: item.snippet.thumbnails.default.url,
+                thumbnail: item.snippet.thumbnails.high.url,
             }));
 
             localStorage.setItem(this.cacheKey, JSON.stringify(this.videos));
