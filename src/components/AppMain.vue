@@ -102,7 +102,7 @@ export default {
             }
 
             const response = await axios.get(
-                `https://www.googleapis.com/youtube/v3/search?key=${process.env.VUE_APP_YOUTUBE_API}&channelId=UCejEXnx1OcXmIei8OGwLSMQ&part=snippet,id&order=date&maxResults=6`
+                `https://www.googleapis.com/youtube/v3/search?key=${process.env.VUE_APP_YOUTUBE_API}&channelId=UCejEXnx1OcXmIei8OGwLSMQ&part=snippet,id&order=date&maxResults=6&type=video`
             );
 
             this.videos = response.data.items.map((item) => ({
