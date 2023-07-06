@@ -106,7 +106,7 @@ export default {
             );
 
             this.videos = response.data.items.map((item) => ({
-                id: item.snippet.resourceID.videoID,
+                id: item.id.videoID,
                 title: item.snippet.title.replace(' | Temple Mount Podcast', ''),
                 description: item.snippet.description,
                 thumbnail: item.snippet.thumbnails.default.url,
