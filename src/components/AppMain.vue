@@ -67,42 +67,41 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            videos: []
+            videos: [],
+            cacheDuration: 24 * 60 * 60,
+            cacheKey: 'videosCache',
+            cacheTimestampKey: 'videosCacheTimestamp',
         };
     },
     async created() {
         try {
-            const cache = JSON.parse(localStorage.getItem('videos'));
+            const cacheTimestamp = localStorage.getItem(this.cacheTimestampKey);
             const now = Date.now();
-            const ONE_DAY = 24 * 60 * 60 * 1000; // in ms
 
-            if (cache && (now - cache.timestamp) < ONE_DAY) {
-                this.videos = cache.data;
+            if (cacheTimestamp && now - cacheTimestamp < this.cacheDuration) {
+                const cache = JSON.parse(localStorage.getItem(this.cacheKey));
+                this.videos = cache;
                 return;
             }
 
-            const response = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=${process.env.VUE_APP_YOUTUBE_API}&channelId=UCejEXnx1OcXmIei8OGwLSMQ&part=snippet,id&order=date&maxResults=6`);
+            const response = await axios.get(
+                `https://www.googleapis.com/youtube/v3/search?key=${process.env.VUE_APP_YOUTUBE_API}&channelId=UCejEXnx1OcXmIei8OGwLSMQ&part=snippet,id&order=date&maxResults=6`
+            );
 
-            this.videos = response.data.items.map(item => {
-                const title = item.snippet.title;
-                const trimmedTitle = title.replace(" | Temple Mount Podcast", "");
+            this.videos = response.data.items.map((item) => ({
+                id: item.id.videoId,
+                title: item.snippet.title.replace(' | Temple Mount Podcast', ''),
+                description: item.snippet.description,
+                thumbnail: `https://img.youtube.com/vi/${item.id.videoId}/0.jpg`,
+            }));
 
-                return {
-                    id: item.id.videoId,
-                    title: trimmedTitle,
-                    description: item.snippet.description,
-                    thumbnail: `https://img.youtube.com/vi/${item.id.videoId}/0.jpg`,
-                };
-            });
-
-            // save the videos and current timestamp to the localStorage
-            localStorage.setItem('videos', JSON.stringify({ data: this.videos, timestamp: now }));
-
+            localStorage.setItem(this.cacheKey, JSON.stringify(this.videos));
+            localStorage.setItem(this.cacheTimestampKey, now);
         } catch (err) {
             console.error(err);
         }
-    }
-}
+    },
+};
 
 </script>
 
