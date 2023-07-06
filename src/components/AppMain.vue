@@ -1,4 +1,5 @@
 <template>
+    <MetaTags :og-image="ogImage" :twitter-image="twitterImage" />
     <main>
         <section class="banner">
             <a href="https://discord.gg/aygEfaxWeF">
@@ -7,8 +8,6 @@
                         <h1>Join the Server</h1>
                         <h1>discord.gg/templemount</h1>
                     </a>
-                    <!-- You can also add a description if needed -->
-                    <!-- <p>Your Banner Description</p> -->
                 </div>
             </a>
         </section>
@@ -63,14 +62,20 @@
   
 <script>
 import axios from 'axios';
+import MetaTags from './path/to/MetaTags.vue';
 
 export default {
+    components: {
+        MetaTags,   
+    },
     data() {
         return {
             videos: [],
             cacheDuration: 24 * 60 * 60,
             cacheKey: 'videosCache',
             cacheTimestampKey: 'videosCacheTimestamp',
+            opImage: process.env.VUE_APP_OG_IMAGE,
+            twitterImage: process.env.VUE_APP_TWITTER_IMAGE,
         };
     },
     async created() {

@@ -37,20 +37,6 @@
 
     gtag('config', '{{ process.env.VUE_APP_ANALYTICS_ID }}');
 
-    window.addEventListener('DOMContentLoaded', function () {
-      var metaTags = [
-        { property: 'og:image', content: '<%= require("@/assets/tmlogo.png") %>' },
-        { name: 'twitter:image', content: '<%= require("@/assets/tmlogo.png") %>' }
-      ];
-
-      metaTags.forEach(function (tag) {
-        var metaTag = document.createElement('meta');
-        Object.entries(tag).forEach(function ([key, value]) {
-          metaTag.setAttribute(key, value);
-        });
-        document.head.appendChild(metaTag);
-      });
-    });
   </script>
 
 </head>
