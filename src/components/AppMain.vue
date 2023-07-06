@@ -62,11 +62,11 @@
   
 <script>
 import axios from 'axios';
-import MetaTags from './path/to/MetaTags.vue';
+import MetaTags from '@/components/MetaTags.vue';
 
 export default {
     components: {
-        MetaTags,   
+        MetaTags,
     },
     data() {
         return {
