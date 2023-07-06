@@ -9,6 +9,8 @@
             <a href="https://www.bitchute.com/channel/templemountpodcast/" target="_blank" rel="noopener"
                 aria-label="Link to Temple Mount Bitchute"> <img class="fab custom-icon"
                     :src="require('@/assets/bitchute_icon.png')" alt="Bitchute Logo"></a>
+            <a href="https://twitter.com/templemountco" target="_blank" rel="noopener"
+                aria-label="Link to Temple Mount Twitter"><i class="fab fa-twitter"></i></a>
             <a href="https://www.zazzle.com/store/templemount" target="_blank" rel="noopener"
                 aria-label="Link to Temple Mount Shop"><i class="fas fa-shopping-cart"></i></a>
         </nav>
@@ -49,4 +51,5 @@ export default {
 .custom-icon {
     height: 24px;
     width: 24px;
-}</style>
+}
+</style>
