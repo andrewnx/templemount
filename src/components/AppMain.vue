@@ -5,7 +5,7 @@
             <a href="https://discord.gg/aygEfaxWeF">
                 <div class="banner-heading">
                     <a href="https://discord.gg/aygEfaxWeF">
-                        <h1>Join the Server</h1>
+                        <h1>Join us on Discord:</h1>
                         <h1>discord.gg/templemount</h1>
                     </a>
                 </div>
