@@ -2,6 +2,10 @@
     <MetaTags :og-image="require('@/assets/tmlogo.png')" :twitter-image="require('@/assets/tmlogo.png')" />
     <main>
         <section class="banner">
+            <video autoplay loop muted class="banner-video">
+                <source src="../assets/TMVideo.webm" type="video/webm">
+                Your browser does not support embedded video.
+            </video>
             <a href="https://discord.gg/aygEfaxWeF">
                 <div class="banner-heading">
                     <a href="https://discord.gg/aygEfaxWeF">
@@ -133,10 +137,17 @@ export default {
 .banner {
     position: relative;
     height: 90vh;
-    background-image: url('../assets/TMVideo.webm');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    overflow: hidden;
+}
+
+.banner-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ensures video covers entire section */
 }
 
 .banner-image {
