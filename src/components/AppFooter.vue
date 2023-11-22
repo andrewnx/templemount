@@ -2,16 +2,16 @@
     <footer class="main-footer">
         <p>© 2023 Temple Mount Discord Server | All rights reserved</p>
         <nav class="navigation-icons footer-nav">
-            <a href="https://discord.gg/templemount" target="_blank" rel="noopener"
+            <a href="https://discord.gg/templemount" target="_blank" rel="noopener noreferrer"
                 aria-label="Link to Temple Mount Discord"><i class="fab fa-discord"></i></a>
-            <a href="https://www.youtube.com/@templemountofficial/videos" target="_blank" rel="noopener"
+            <a href="https://www.youtube.com/@templemountofficial/videos" target="_blank" rel="noopener noreferrer"
                 aria-label="Link to Temple Mount Youtube"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.bitchute.com/channel/templemountpodcast/" target="_blank" rel="noopener"
+            <a href="https://www.bitchute.com/channel/templemountpodcast/" target="_blank" rel="noopener noreferrer"
                 aria-label="Link to Temple Mount Bitchute"> <img class="fab custom-icon"
                     :src="require('@/assets/bitchute_icon.png')" alt="Bitchute Logo"></a>
-            <a href="https://twitter.com/templemountco" target="_blank" rel="noopener"
+            <a href="https://twitter.com/templemountco" target="_blank" rel="noopener noreferrer"
                 aria-label="Link to Temple Mount Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.zazzle.com/store/templemount" target="_blank" rel="noopener"
+            <a href="https://www.zazzle.com/store/templemount" target="_blank" rel="noopener noreferrer"
                 aria-label="Link to Temple Mount Shop"><i class="fas fa-shopping-cart"></i></a>
         </nav>
     </footer>

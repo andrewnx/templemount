@@ -133,7 +133,7 @@ export default {
 .banner {
     position: relative;
     height: 90vh;
-    background-image: url('../assets/TMVideoGif.gif');
+    background-image: url('../assets/TMVideo.webm');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

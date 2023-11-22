@@ -1,1 +1,3 @@
-Sitemap: https://templemount.co/sitemap.xml
+User-agent: *
+Disallow:
+Sitemap: https://www.templemount.co/sitemap.xml
