@@ -144,8 +144,10 @@ export default {
     position: absolute;
     top: 50%;
     left: 50%;
+    min-width: 100%;
+    min-height:100%;
     width: auto;
-    height: 100%;
+    height: auto;
     transform: translate(-50%, -50%);
     object-fit: cover; /* Ensures video covers entire section */
 }
