@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="dark-mode">
     <AppHeader :showNav="showNav" @toggle-nav="toggleMenu" />
-    <AppSidebar />
+    <AppSidebar :class="{ 'is-visible': showNav }" />
     <AppMain :videos="podcasts" />
     <AppFooter />
   </div>
