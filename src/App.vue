@@ -1,6 +1,7 @@
 <template>
   <div id="app" class="dark-mode">
     <AppHeader :showNav="showNav" @toggle-nav="toggleMenu" />
+    <AppSidebar />
     <AppMain :videos="podcasts" />
     <AppFooter />
   </div>
@@ -9,20 +10,22 @@
 <script>
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
-import AppFooter from './components/AppFooter.vue';
+import AppFooter from "./components/AppFooter.vue";
+import AppSidebar from "./components/AppSidebar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     AppHeader,
     AppMain,
-    AppFooter
+    AppFooter,
+    AppSidebar,
   },
   data() {
     return {
       showNav: false,
-      podcasts: []
-    }
+      podcasts: [],
+    };
   },
   methods: {
     toggleMenu() {
@@ -37,13 +40,13 @@ export default {
     },
   },
   mounted() {
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener("resize", this.handleResize);
     this.handleResize();
   },
   beforeUnmount() {
-    window.removeEventListener('resize', this.handleResize);
-  }
-}
+    window.removeEventListener("resize", this.handleResize);
+  },
+};
 </script>
 
 <style scoped>
@@ -56,10 +59,10 @@ ul {
 #app {
   color: #eee;
   background-color: #000000;
-  font-family: 'MedievalSharp', cursive;
+  font-family: "MedievalSharp", cursive;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
 
 *,
 *::before,
