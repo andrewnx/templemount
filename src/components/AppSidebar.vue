@@ -1,22 +1,50 @@
 <template>
   <div class="sidebar" v-if="isVisible">
     <nav class="social-icons">
-      <!-- Add your social icons here, similar to the ones in AppHeader.vue -->
       <a
         href="https://discord.gg/aygEfaxWeF"
         target="_blank"
         rel="noopener"
         aria-label="Link to Temple Mount Discord"
-        ><i class="fab fa-discord"></i
-      ></a>
+      >
+        <i class="fab fa-discord"></i>
+      </a>
       <a
         href="https://www.youtube.com/@templemountofficial/videos"
         target="_blank"
         rel="noopener"
         aria-label="Link to Temple Mount Youtube"
-        ><i class="fab fa-youtube"></i
-      ></a>
-      <!-- ... other icons ... -->
+      >
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a
+        href="https://www.bitchute.com/channel/templemountpodcast/"
+        target="_blank"
+        rel="noopener"
+        aria-label="Link to Temple Mount Bitchute"
+      >
+        <img
+          class="fab custom-icon"
+          :src="require('@/assets/bitchute_icon.png')"
+          alt="Bitchute Logo"
+        />
+      </a>
+      <a
+        href="https://twitter.com/templemountco"
+        target="_blank"
+        rel="noopener"
+        aria-label="Link to Temple Mount Twitter"
+      >
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a
+        href="https://www.zazzle.com/store/templemount"
+        target="_blank"
+        rel="noopener"
+        aria-label="Link to Temple Mount Shop"
+      >
+        <i class="fas fa-shopping-cart"></i>
+      </a>
     </nav>
   </div>
 </template>
