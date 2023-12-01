@@ -39,12 +39,19 @@ export default {
       }
     },
   },
+  checkHeaderVisibility() {
+    const headerHeight = document.querySelector(".main-header").offsetHeight;
+    this.showNav = window.scrollY > headerHeight;
+  },
   mounted() {
     window.addEventListener("resize", this.handleResize);
+    window.addEventListener("scroll", this.checkHeaderVisibility);
     this.handleResize();
+    this.checkHeaderVisibility(); // Initial check
   },
   beforeUnmount() {
     window.removeEventListener("resize", this.handleResize);
+    window.removeEventListener("scroll", this.checkHeaderVisibility);
   },
 };
 </script>

@@ -82,9 +82,10 @@ export default {
   right: 10px;
   transform: translateY(-50%);
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   padding: 10px;
   border-radius: 5px;
+  display: none;
 }
 
 .social-icons a {
